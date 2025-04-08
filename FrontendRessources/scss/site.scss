@@ -1,0 +1,149 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  flex: 1;
+  margin: 0;
+  font-family: Arial;
+  font-size: 16px;
+}
+
+#main-content {
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-top: 77px;
+}
+
+#external-account {
+  display: flex;
+  flex-direction: column;
+}
+
+.svn-container {
+  padding: 25px 2vw 64px 2vw;
+}
+
+/* Carousel */
+
+.carousel-caption p {
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+
+.carousel-inner .item img[src$='.svg'] {
+  width: 100%;
+}
+
+/* QR code generator */
+
+#qrCode {
+  margin: 15px;
+}
+
+.max-text-width {
+  max-width: 800px;
+  white-space: pre-line
+}
+
+.divider {
+  margin: 1.5rem 0;
+  border: none;
+}
+
+div.information-row {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.providerBtn {
+  min-width: 400px;
+  font-weight: bold;
+}
+
+div.button-desc {
+  margin-top: 10px;
+}
+
+iframe {
+  border: none;
+}
+
+#spinner {
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 50vh;
+  position: absolute;
+  z-index: 10000;
+  width: 70px;
+  height: 70px;
+  display: block;
+}
+
+#spinnerMessage {
+  font-size: 11px;
+  text-align: center;
+  width: 70px;
+}
+
+$width: 100px;
+$height: 100px;
+
+#spinnerSpinAnimation {
+  border: 10px solid #f0f0f0;
+  border-top: 8px solid #337e33;
+  border-radius: 50%;
+  width: $width;
+  height: $height;
+  top: -$height * 0.4;
+  left: -$width * 0.16;
+  animation: spin 700ms linear infinite;
+  position: absolute;
+}
+
+#spinnerBackground {
+  background-color: #fff;
+  border-radius: 50%;
+  width: $width;
+  height: $height;
+  top: -$height * 0.4;
+  left: -$width * 0.16;
+  z-index: -1;
+  position: absolute;
+}
+
+#spinnerBackdrop {
+  background-color: #000;
+  opacity: 0.5;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hide/rearrange for smaller screens */
+
+@media screen and (max-width: 767px) {
+  /* Hide captions */
+  .carousel-caption {
+    display: none;
+  }
+}

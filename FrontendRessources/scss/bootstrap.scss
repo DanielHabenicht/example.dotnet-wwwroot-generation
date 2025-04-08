@@ -1,0 +1,15 @@
+$yellow: #ffdd00;
+
+$primary: #337e33;
+
+$link-color: #296529; // Darker green for links
+$body-color: #000;
+
+$font-size-base: 1.1875rem; // = 16pt;
+
+@import 'bootstrap/scss/bootstrap';
+
+// Fixes
+a:focus {
+  text-decoration: underline;
+}

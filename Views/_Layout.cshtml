@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-5"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Hauptseite
+    </title>
+
+    <link rel="stylesheet" href="~/shared.css">
+</head>
+
+<body>
+<header class="header" style="height: 77px;">
+        <div id="background"></div>
+        <div id="main-header">
+            <div class="toolbar">
+                <div class="home">
+                    <a id="logo" href="/" title="Haupseite">
+                        <img id="logo" src="/images/logo.svg" role="presentation">
+                    </a>
+                    <div id="app-name" aria-hidden="true">
+                        <span>Hauptseite</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+</header>
+<main>
+    
+<div id="main-content">
+    <div class="svn-container">@RenderBody()</div>
+</div>
+</main>
+<footer class="footer">
+    <div class="container footer-content">
+        <div class="row">
+                <div class="version" title="@ViewData[Constants.ShortGitHash]">
+                    @if (this.ViewData[Constants.Version] != null)
+                    {
+                        <span>Version @ViewData[Constants.Version]</span>
+                    }
+                </div>
+            <div class="links">
+                
+                <a class="link" href="/Home/Imprint" title="Navigiere zum Impressum">Impressum</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<environment include="Development">
+    <script type="text/javascript" src="~/shared.bundle.js"></script>
+</environment>
+<environment exclude="Development">
+    <script type="text/javascript" src="~/shared.bundle.js" asp-append-version="true"></script>
+</environment>
+
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
