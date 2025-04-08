@@ -1,0 +1,1 @@
+# example.dotnet-wwwroot-generation
